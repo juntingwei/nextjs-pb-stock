@@ -1,4 +1,4 @@
-import 'app/global.css'
+/* eslint-disable @next/next/no-head-element */
 
 export default function RootLayout({
   children,
@@ -6,7 +6,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html>
+      <head></head>
       <body>{children}</body>
     </html>
   );
