@@ -1,31 +1,25 @@
-'use client'
+'use client';
 import React from "react"
+import { logOutFunction, logInFunction } from "@/pages/api";
+
+// Update this to the URL for your backend
 
 export default function Login() {
 
-    //practice usestate
-
-    const [number, setNumber] = React.useState(0)
-
-    function numberUp() {
-        setNumber(x => x + 1)
-    }
-
     // email usestate
-
     const [emailInput, setEmailInput] = React.useState("")
 
-    function updateEmailInput(e: React.ChangeEvent<HTMLInputElement>) {
-        setEmailInput(e.target.value)
+    function updateEmailInput(event: React.ChangeEvent<HTMLInputElement>) {
+        setEmailInput(event.target.value)
     }
 
-    //password usestate
-
+    // password usestate
     const [passwordInput, setPasswordInput] = React.useState("")
 
-    function updatePasswordInput(e: React.ChangeEvent<HTMLInputElement>) {
-        setPasswordInput(e.target.value)
+    function updatePasswordInput(event: React.ChangeEvent<HTMLInputElement>) {
+        setPasswordInput(event.target.value)
     }
+
     
     return (
         <div className="flex flex-col h-screen justify-center items-center">
@@ -47,8 +41,11 @@ export default function Login() {
                     value={passwordInput} 
                     onChange={updatePasswordInput}
                 />
-                <button onClick={numberUp} className="bg-blue-500 text-white px-4 py-2 rounded">
+                <button onClick={() => logInFunction(emailInput, passwordInput)} className="my-2 bg-blue-500 text-white px-4 py-2 rounded">
                 Login
+                </button>
+                <button onClick={logOutFunction} className="my-2 bg-blue-500 text-white px-4 py-2 rounded">
+                Logout
                 </button>
             </div>
         </div>
