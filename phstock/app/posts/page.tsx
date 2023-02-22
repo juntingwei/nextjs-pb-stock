@@ -1,4 +1,4 @@
-import { getPages } from 'pages/api/index'
+import { getPages } from '@/pages/api/index'
 
 export default async function PostsPage() {
     

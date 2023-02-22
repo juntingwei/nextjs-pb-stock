@@ -23,6 +23,7 @@ export async function getPages() {
 
     export function logOutFunction() {
         pb.authStore.clear()
+        window.location.reload()
     }
 
     //Login
@@ -36,5 +37,5 @@ export async function getPages() {
         } catch (error) {
             console.error(error);
         }
+        window.location.reload()
     }
-
