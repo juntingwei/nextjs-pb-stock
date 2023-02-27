@@ -19,7 +19,6 @@ export default function Login() {
     function updatePasswordInput(event: React.ChangeEvent<HTMLInputElement>) {
         setPasswordInput(event.target.value)
     }
-
     
     return (
         <div className="flex flex-col h-screen justify-center items-center">
@@ -43,9 +42,6 @@ export default function Login() {
                 />
                 <button onClick={() => logInFunction(emailInput, passwordInput)} className="my-2 bg-blue-500 text-white px-4 py-2 rounded">
                 Login
-                </button>
-                <button onClick={logOutFunction} className="my-2 bg-blue-500 text-white px-4 py-2 rounded">
-                Logout
                 </button>
             </div>
         </div>
